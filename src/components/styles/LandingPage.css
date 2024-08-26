@@ -1,0 +1,90 @@
+.landing-header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../media/Landing.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.landing-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Optional: dark overlay */
+}
+
+.landing-content {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px; /* Add some padding */
+}
+
+#landing-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+#landing-description {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+.landing-button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 1.25rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.landing-button:hover {
+    background-color: #0056b3;
+}
+
+.landing-documentation {
+    margin-top: 50px;
+    padding: 20px;
+    background: #fff;
+    color: #333;
+    border-radius: 10px;
+    max-width: 90%;
+    z-index: 2;
+}
+
+#doc-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#doc-content {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#doc-list {
+    list-style-type: disc;
+    margin-left: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+}

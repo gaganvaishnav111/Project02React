@@ -1,0 +1,101 @@
+/* Container for the entire Deactivate User page */
+.deactivate-user-container {
+    width: 100%;
+    max-width: 1000px; /* Increased width for better layout */
+    margin: 40px auto; /* Center the form horizontally and add margin */
+    padding: 20px; /* Add padding inside the container */
+    background-color: #ffffff; /* White background */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Title styling */
+.deactivate-user-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px; /* Space below the title */
+    text-align: center; /* Center the title */
+}
+
+/* Table container for activating and deactivating users */
+.deactivate-user-tables {
+    display: flex;
+    flex-direction: row; /* Place tables side by side */
+    gap: 20px; /* Space between tables */
+}
+
+/* Table styling for activating users */
+.activating-user-table {
+    flex: 1;
+    background-color: #f9f9f9; /* Light gray background */
+    padding: 20px;
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Table styling for deactivating users */
+.deactivating-user-table {
+    flex: 1;
+    background-color: #f9f9f9; /* Light gray background */
+    padding: 20px;
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Section header */
+.deactivate-user-tables h3 {
+    font-size: 1.25rem;
+    margin-bottom: 15px; /* Space below the header */
+    text-align: center; /* Center the header */
+}
+
+/* Input and select styling */
+.deactivate-user-select {
+    width: 100%; /* Full width */
+    padding: 10px;
+    margin-bottom: 15px; /* Space between fields */
+    border: 1px solid #ccc; /* Light border color */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+/* Button styling */
+.activate-user-button, .deactivate-user-button, .toggle-button {
+    width: 100%; /* Full width of the container */
+    padding: 10px;
+    border: none;
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px; /* Space between buttons */
+}
+
+.activate-user-button {
+    background-color: #28a745; /* Green background */
+    color: #ffffff; /* White text */
+}
+
+.activate-user-button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.deactivate-user-button {
+    background-color: #dc3545; /* Red background */
+    color: #ffffff; /* White text */
+}
+
+.deactivate-user-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+.toggle-button {
+    background-color: #007bff; /* Blue background */
+    color: #ffffff; /* White text */
+}
+
+.toggle-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
