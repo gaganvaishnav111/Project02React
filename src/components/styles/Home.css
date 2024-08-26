@@ -1,0 +1,136 @@
+/* Container for the entire home page */
+.home-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Welcome heading styling */
+.admin-welcome {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-top: 0;
+    text-align: center;
+}
+
+/* User welcome message styling */
+.welcome-user {
+    font-size: 2.1rem;
+    text-align: left;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* Actions container styling as horizontal navbar */
+.actions-container {
+    display: flex;
+    justify-content: center; /* Centers buttons horizontally */
+    margin: 20px 0;
+    padding: 10px;
+    position: relative; /* Position relative for dropdown positioning */
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensures dropdown appears above other content */
+}
+
+/* Show the dropdown menu when active */
+.dropdown-menu.show {
+    display: block;
+}
+
+/* Dropdown item styling */
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Action button styling */
+.action-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px; /* Adjust margin for horizontal spacing */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+}
+
+/* Data container styling */
+.data-container {
+    margin-top: 20px;
+}
+
+/* Search box styling */
+.search-box {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* Pagination controls styling */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination-controls button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination-controls span {
+    align-self: center;
+    margin: 0 10px;
+}

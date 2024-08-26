@@ -1,0 +1,74 @@
+/* MessageProjectManager.css */
+
+/* Container for the Message Project Manager page */
+#message-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+#message-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Project group styling */
+.project-group {
+    margin-bottom: 30px;
+}
+
+/* Project name styling */
+.project-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Table styling */
+.message-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.message-table th,
+.message-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.message-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.message-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.message-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Button styling */
+.message-delete-button {
+    background-color: #dc3545;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.message-delete-button:hover {
+    background-color: #c82333;
+}

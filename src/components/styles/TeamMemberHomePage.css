@@ -1,0 +1,115 @@
+/* Container for the entire team member home page */
+.tm-home-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Main heading styling */
+.tm-main-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-top: 0;
+    text-align: center;
+}
+
+/* User welcome message styling */
+.tm-welcome-message {
+    font-size: 2.1rem;
+    text-align: left;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* Actions container styling as horizontal row */
+.tm-actions-container {
+    display: flex;
+    justify-content: center; /* Centers buttons horizontally */
+    flex-wrap: wrap; /* Allows wrapping if there are too many buttons */
+    margin: 20px 0;
+    padding: 20px;
+}
+
+/* Action buttons styling */
+.tm-action-button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 25px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Action button hover effect */
+.tm-action-button:hover {
+    background-color: #0056b3; /* Darker shade of primary color */
+}
+
+/* Data container styling */
+.tm-data-container {
+    padding: 20px;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+/* Table header styling */
+th {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    padding: 10px;
+}
+
+/* Table cell styling */
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* Search box styling */
+.tm-search-box {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Pagination controls styling */
+.pagination-controls {
+    display: flex;
+    justify-content: center; /* Centers pagination controls horizontally */
+    margin: 20px 0;
+}
+
+/* Pagination buttons styling */
+.pagination-controls button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Pagination button hover effect */
+.pagination-controls button:hover {
+    background-color: #0056b3; /* Darker shade of primary color */
+}
+
+/* Pagination controls disabled state */
+.pagination-controls button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
