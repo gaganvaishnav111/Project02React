@@ -1,0 +1,95 @@
+/* TrackUserActivityPage.css */
+
+/* Container for the Track User Activity page */
+#track-activity-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+#track-activity-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form group styling */
+#track-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Label styling */
+#track-label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Select and Button styling */
+#userSelect {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Button styling */
+#trackButton {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#trackButton:hover {
+    background-color: #0056b3;
+}
+
+/* Activity container styling */
+#activityContainer {
+    margin-top: 20px;
+}
+
+/* Track activity card styling */
+.track-activity-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Card title and details styling */
+.card-title,
+.task-title,
+.milestone-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.task-details,
+.milestone-details {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* Styling for empty state message */
+#activityContainer p {
+    text-align: center;
+    color: #666;
+    font-size: 1rem;
+}
