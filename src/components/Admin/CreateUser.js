@@ -8,7 +8,7 @@ const CreateUser = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [role, setRole] = useState('');
-    const [status, setStatus] = useState('');  // New state for status
+    const [status, setStatus] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();

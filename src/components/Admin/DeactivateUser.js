@@ -59,7 +59,6 @@ const DeactivateUser = () => {
             console.log(`User ${action}d:, { userid: selectedUser }`);
             console.log('API Response:', response.data);
 
-            // Update user lists after action
             const updatedUsers = users.filter(user => user.value !== selectedUser);
             setUsers(updatedUsers);
             setActiveUsers(updatedUsers.filter(user => user.status === 'ACTIVE'));

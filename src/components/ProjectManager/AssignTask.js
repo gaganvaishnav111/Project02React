@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
-import '../styles/AssignTask.css'; // Import the CSS file
+import '../styles/AssignTask.css';
 
 const AssignTask = () => {
     const location = useLocation();
@@ -22,7 +22,6 @@ const AssignTask = () => {
     });
 
     useEffect(() => {
-        // Fetch projects assigned to the current user
         axios.get(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/projects/by-username?username=${username}`)
             .then(response => {
                 setProjects(response.data);
@@ -30,8 +29,6 @@ const AssignTask = () => {
             .catch(error => {
                 console.error('There was an error fetching the projects!', error);
             });
-
-        // Fetch all milestones
         axios.get('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/milestones')
             .then(response => {
                 setMilestones(response.data);
@@ -45,11 +42,9 @@ const AssignTask = () => {
         const projectId = e.target.value;
         setSelectedProject(projectId);
         setFormData({ ...formData, project: projectId });
-
-        // Fetch team members based on selected project
         axios.get(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/projects/getTeamMembersByProjectId?projectId=${projectId}`)
             .then(response => {
-                console.log('Fetched team members:', response.data); // Debugging log
+                console.log('Fetched team members:', response.data);
                 setTeamMembers(response.data);
             })
             .catch(error => {
@@ -64,21 +59,19 @@ const AssignTask = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        // Create the data object in the required format
         const dataToSubmit = {
             taskName: formData.taskName,
             taskDetails: formData.taskDescription,
             startDate: formData.startDate,
             dueDate: formData.dueDate,
             project: {
-                projectId: parseInt(formData.project) // Assuming project ID is stored in formData.project
+                projectId: parseInt(formData.project)
             },
             assignedTo: {
-                userid: parseInt(formData.teamMember) // Assuming user ID is stored in formData.teamMember
+                userid: parseInt(formData.teamMember)
             },
             milestone: {
-                milestoneId: parseInt(formData.milestoneId) // Assuming milestone ID is stored in formData.milestoneId
+                milestoneId: parseInt(formData.milestoneId)
             }
         };
 
@@ -89,8 +82,6 @@ const AssignTask = () => {
                 console.log('Response:', response.data);
                 console.log('Submitted Data:', dataToSubmit);
                 alert('Task assigned successfully!');
-
-                // Reset the form fields
                 setFormData({
                     project: '',
                     teamMember: '',
@@ -100,8 +91,6 @@ const AssignTask = () => {
                     startDate: '',
                     dueDate: ''
                 });
-
-                // Optionally reset other states
                 setSelectedProject('');
                 setTeamMembers([]);
             })
