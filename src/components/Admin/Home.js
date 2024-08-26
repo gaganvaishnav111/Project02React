@@ -20,9 +20,6 @@ const Home = () => {
         const fetchUserDetails = async () => {
             try {
                 const response = await fetch(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/by-username?username=${username}`);
-
-                const response = await fetch(`http://localhost:8080/api/users/by-username?username=${username}`);
-
                 const data = await response.json();
                 setUserDetails(data);
             } catch (error) {
@@ -219,19 +216,11 @@ const Home = () => {
                 <button onClick={() => setDataType('admin functionalities')} className="action-button">Admin Functionalities</button>
                 <button onClick={() => {
                     setDataType('users');
-
                     fetchData('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/all', 'users');
                     handleDropdownToggle();
                 }} className="action-button">Users</button>
                 <button onClick={() => fetchData('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/clients/all', 'clients')} className="action-button">Clients</button>
                 <button onClick={() => fetchData('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/projects', 'projects')} className="action-button">Projects</button>
-
-                    fetchData('http://localhost:8080/api/users/all', 'users');
-                    handleDropdownToggle();
-                }} className="action-button">Users</button>
-                <button onClick={() => fetchData('http://localhost:8080/api/clients/all', 'clients')} className="action-button">Clients</button>
-                <button onClick={() => fetchData('http://localhost:8080/api/projects', 'projects')} className="action-button">Projects</button>
-
             </div><br></br>
             <div className="data-container">
                 <h3><b>{`Displaying ${dataType}`}</b></h3>

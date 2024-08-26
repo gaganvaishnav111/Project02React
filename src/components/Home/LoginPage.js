@@ -12,7 +12,7 @@ const LoginPage = () => {
         event.preventDefault();
 
         try {
-            const response = await fetch('revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/login', {
+            const response = await fetch('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

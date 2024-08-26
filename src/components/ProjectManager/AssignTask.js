@@ -25,7 +25,6 @@ const AssignTask = () => {
     useEffect(() => {
         // Fetch projects assigned to the current user
         axios.get(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/projects/by-username?username=${username}`)
-        axios.get(`http://localhost:8080/api/projects/by-username?username=${username}`)
             .then(response => {
                 setProjects(response.data);
             })
@@ -35,7 +34,6 @@ const AssignTask = () => {
 
         // Fetch all milestones
         axios.get('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/milestones')
-        axios.get('http://localhost:8080/api/milestones')
             .then(response => {
                 setMilestones(response.data);
             })
@@ -51,7 +49,6 @@ const AssignTask = () => {
 
         // Fetch team members based on selected project
         axios.get(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/projects/getTeamMembersByProjectId?projectId=${projectId}`)
-        axios.get(`http://localhost:8080/api/projects/getTeamMembersByProjectId?projectId=${projectId}`)
             .then(response => {
                 console.log('Fetched team members:', response.data); // Debugging log
                 setTeamMembers(response.data);
@@ -89,8 +86,6 @@ const AssignTask = () => {
         console.log(dataToSubmit);
 
         axios.post('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/tasks/create', dataToSubmit)
-
-        axios.post('http://localhost:8080/api/tasks/create', dataToSubmit)
             .then(response => {
                 console.log('Response:', response.data);
                 console.log('Submitted Data:', dataToSubmit);

@@ -16,9 +16,6 @@ const DeactivateUser = () => {
         const fetchUsers = async () => {
             try {
                 const response = await axios.get('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/all');
-
-                const response = await axios.get('http://localhost:8080/api/users/all');
-
                 const userOptions = response.data
                     .filter(user => user.role === 'PROJECT_MANAGER' || user.role === 'TEAM_MEMBER')
                     .map(user => ({
@@ -49,20 +46,12 @@ const DeactivateUser = () => {
         try {
             let response;
             if (action === 'deactivate') {
-
                 response = await axios.put(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/deactivate/${selectedUser}`);
-
-                response = await axios.put(`http://localhost:8080/api/users/deactivate/${selectedUser}`);
-
                 toast.success('User Deactivated successfully!', {
                     autoClose: 8000,
                 });
             } else if (action === 'activate') {
-
                 response = await axios.put(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/activate/${selectedUser}`);
-
-                response = await axios.put(`http://localhost:8080/api/users/activate/${selectedUser}`);
-
                 toast.success('User Activated successfully!', {
                     autoClose: 8000,
                 });
