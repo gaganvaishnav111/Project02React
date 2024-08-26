@@ -1,0 +1,141 @@
+/* Container for the entire dashboard */
+.task-dashboard-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.team-mem-project-box {
+    margin-bottom: 5px;
+    padding: 15px
+
+}
+
+
+/* Project selection styles */
+.project-selection {
+    margin-bottom: 5px;
+    padding: 5px
+    
+}
+
+/* Container for milestones, set to scroll horizontally */
+.milestones-container {
+    display: flex;
+    flex-direction: row; /* Arrange milestones horizontally */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Hide vertical overflow */
+    width: 100%;
+}
+
+/* Milestone styles */
+.milestone {
+    min-width: 300px; /* Set a minimum width for milestones */
+    margin-right: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Task container styles */
+.tasks {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Task item styles */
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.task-icon {
+    margin-right: 10px;
+}
+
+.task-button {
+    flex: 1;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    text-align: left;
+    cursor: pointer;
+}
+
+.task-timestamp {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Overlay for task details */
+.task-details-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Task details container */
+.task-details {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Styles for the message popup */
+.message-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message-popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+}
