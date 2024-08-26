@@ -84,7 +84,7 @@ const ProjectManagerHomePage = () => {
                 )
             );
         }
-        setCurrentPage(1); // Reset to the first page
+        setCurrentPage(1);
     };
 
     const renderData = () => {

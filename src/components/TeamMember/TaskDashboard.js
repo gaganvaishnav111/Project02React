@@ -18,7 +18,7 @@ const TaskDashboard = () => {
     const [selectedTask, setSelectedTask] = useState(null);
     const [showMessagePopup, setShowMessagePopup] = useState(false);
     const [projectManagerName, setProjectManagerName] = useState('');
-    const [projectManagerUserId, setProjectManagerUserId] = useState(null);
+    const [projectManagerUserId, setProjectManagerUserId] = useState('');
 
     useEffect(() => {
         if (username && username !== 'Unknown User') {
@@ -136,7 +136,7 @@ const TaskDashboard = () => {
 
         const updatedTasks = tasks.map(task =>
             task.taskId === taskId
-                ? { ...task, milestone: destinationMilestone, lastUpdated: new Date().toISOString() } // Add lastUpdated timestamp
+                ? { ...task, milestone: destinationMilestone, lastUpdated: new Date().toISOString() }
                 : task
         );
         setTasks(updatedTasks);

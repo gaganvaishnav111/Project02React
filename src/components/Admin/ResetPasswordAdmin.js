@@ -26,14 +26,11 @@ const ResetPasswordAdmin = () => {
         }
 
         try {
-            // Fetch user by username
             const userResponse = await axios.get('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/by-username', {
                 params: { username }
             });
 
             const user = userResponse.data;
-
-            // Check if old password is correct
             if (user.password !== oldPassword) {
                 const errorMessage = 'Old password is incorrect.';
                 setMessage(errorMessage);
@@ -43,7 +40,6 @@ const ResetPasswordAdmin = () => {
                 return;
             }
 
-            // Reset the password
             const resetResponse = await axios.put(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/${user.userid}/password`, null, {
                 params: { newPassword }
             });

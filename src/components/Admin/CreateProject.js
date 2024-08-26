@@ -73,7 +73,6 @@ const CreateProject = () => {
                 autoClose: 3000,
             });
 
-            // Reset form fields after submission
             resetForm();
         } catch (error) {
             console.error('Error creating project:', error);

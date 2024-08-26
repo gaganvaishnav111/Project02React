@@ -58,7 +58,6 @@ const AssignAccessLevels = () => {
             setExistingRole('');
             setNewRole('');
 
-            // Update key to force re-render
             setFormKey(prevKey => prevKey + 1);
         } catch (error) {
             console.error('Error assigning access levels:', error.message);
@@ -78,7 +77,7 @@ const AssignAccessLevels = () => {
             <form onSubmit={handleSubmit} className="assign-access-form">
                 <label htmlFor="user-select" className="assign-access-label">Select User:</label>
                 <Select
-                    key={formKey} // Key prop to force re-render
+                    key={formKey}
                     id="user-select"
                     name="user-select"
                     value={users.find(user => user.value === selectedUser)}

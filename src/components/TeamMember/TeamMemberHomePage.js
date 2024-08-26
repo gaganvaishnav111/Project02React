@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import '../styles/TeamMemberHomePage.css'; // Import the CSS file
+import '../styles/TeamMemberHomePage.css';
 
 const TeamMemberHomePage = () => {
     const location = useLocation();
@@ -75,7 +75,7 @@ const TeamMemberHomePage = () => {
                 )
             );
         }
-        setCurrentPage(1); // Reset to the first page
+        setCurrentPage(1);
     };
 
     const renderData = () => {

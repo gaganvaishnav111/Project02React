@@ -12,24 +12,19 @@ const MessageProjectManager = () => {
 
     useEffect(() => {
         if (username) {
-            // Step 1: Fetch projects by username
             fetch(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/projects/by-username?username=${username}`)
                 .then(response => response.json())
                 .then(projects => {
-                    // Step 2: Fetch messages for each project
                     const projectMessagesPromises = projects.map(project => {
                         return fetch(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/messages/getMessagesByReceiverName?receiverName=${username}&projectId=${project.projectId}`)
                             .then(response => response.json())
                             .then(messages => {
-                                // Step 3: Filter messages where sender is in the teamMembers list
                                 const filteredMessages = messages.filter(message =>
                                     project.teamMembers.some(member => member.username === message.sender.username)
                                 );
                                 return { projectName: project.projectName, messages: filteredMessages };
                             });
                     });
-
-                    // Step 4: Wait for all fetch calls to complete and group messages by project
                     Promise.all(projectMessagesPromises)
                         .then(projectMessagesArray => {
                             const groupedMessages = {};

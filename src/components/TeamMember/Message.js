@@ -92,7 +92,7 @@ const Message = () => {
             receiver: { userid: projectManagerUserId },
             subject: subject,
             context: messageContent,
-            date: new Date().toISOString(), // Ensure the date is included
+            date: new Date().toISOString(),
         };
 
         try {

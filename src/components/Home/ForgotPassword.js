@@ -15,7 +15,7 @@ const ForgetPassword = () => {
     const [otpSent, setOtpSent] = useState(false);
     const [message, setMessage] = useState('');
 
-    const navigate = useNavigate(); // Use the useNavigate hook for navigation
+    const navigate = useNavigate();
 
     const handleSendOtp = async (e) => {
         e.preventDefault();
@@ -85,10 +85,8 @@ const ForgetPassword = () => {
             setEmail('');
             setOtp('');
             setNewPassword('');
-            setConfirmPassword('');
-
-            // Redirect to login page after successful password reset
-            navigate('/login'); // Change '/login' to your desired route
+            setConfirmPassword('');           
+            navigate('/login');
 
         } catch (error) {
             const errorMessage = 'Invalid OTP, Try Again';
