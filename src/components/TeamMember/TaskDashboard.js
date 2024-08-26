@@ -18,7 +18,7 @@ const TaskDashboard = () => {
     const [selectedTask, setSelectedTask] = useState(null);
     const [showMessagePopup, setShowMessagePopup] = useState(false);
     const [projectManagerName, setProjectManagerName] = useState('');
-    const [projectManagerUserId, setProjectManagerUserId] = useState(null);
+    const [projectManagerUserId, setProjectManagerUserId] = useState('');
 
     useEffect(() => {
         if (username && username !== 'Unknown User') {

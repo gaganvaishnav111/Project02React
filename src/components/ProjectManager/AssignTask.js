@@ -6,12 +6,11 @@ import '../styles/AssignTask.css'; // Import the CSS file
 const AssignTask = () => {
     const location = useLocation();
     const navigate = useNavigate();
+    const [selectedProject, setSelectedProject] = useState('');
     const { username } = location.state || {};
-
     const [projects, setProjects] = useState([]);
     const [teamMembers, setTeamMembers] = useState([]);
     const [milestones, setMilestones] = useState([]);
-    const [selectedProject, setSelectedProject] = useState('');
     const [formData, setFormData] = useState({
         project: '',
         teamMember: '',
