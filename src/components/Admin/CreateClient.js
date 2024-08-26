@@ -14,6 +14,9 @@ const CreateClient = () => {
 
         try {
             const response = await axios.post('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/clients/create', {
+
+            const response = await axios.post('http://localhost:8080/api/clients/create', {
+
                 clientName,
                 clientEmail,
                 clientDescription

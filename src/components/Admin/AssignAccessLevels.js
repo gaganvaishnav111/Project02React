@@ -16,6 +16,8 @@ const AssignAccessLevels = () => {
         const fetchUsers = async () => {
             try {
                 const response = await axios.get('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/all');
+
+                const response = await axios.get('http://localhost:8080/api/users/all');
                 const userOptions = response.data.map(user => ({
                     value: user.userid,
                     label: `${user.username}`,
@@ -41,6 +43,9 @@ const AssignAccessLevels = () => {
     
         try {
             const response = await axios.put(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/assign-role/${userIdNumber}`, {
+
+            const response = await axios.put(`http://localhost:8080/api/users/assign-role/${userIdNumber}`, {
+
                 newRole: newRole
             }, {
                 headers: {

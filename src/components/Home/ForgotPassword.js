@@ -22,6 +22,7 @@ const ForgetPassword = () => {
 
         try {
             const response = await axios.post('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/send_otp', { name, email });
+            const response = await axios.post('http://localhost:8080/api/users/send_otp', { name, email });
             if (response.data.success) {
                 setOtpSent(true);
                 setMessage('OTP has been sent to your email.');
@@ -58,6 +59,7 @@ const ForgetPassword = () => {
 
         try {
             const otpResponse = await axios.post('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/validate_otp', {
+            const otpResponse = await axios.post('http://localhost:8080/api/users/validate_otp', {
                 name,
                 email,
                 otp,

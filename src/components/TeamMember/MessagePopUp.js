@@ -18,6 +18,7 @@ const MessagePopup = ({ onClose, projectManagerName, projectManagerId, senderId 
 
         try {
             const response = await fetch('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/messages/create', {
+            const response = await fetch('http://localhost:8080/api/messages/create', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(messageData)
