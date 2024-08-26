@@ -1,0 +1,111 @@
+/* ProjectManagerHomePage.css */
+
+/* Container for the entire project manager home page */
+.pm-home-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Main heading styling */
+.pm-main-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-top: 0;
+    text-align: center;
+}
+
+/* User welcome message styling */
+.pm-welcome-message {
+    font-size: 2.1rem;
+    text-align: left;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-weight: bold;
+} 
+
+/* Actions container styling as horizontal row */
+.pm-actions-container {
+    display: flex;
+    justify-content: center; /* Centers buttons horizontally */
+    flex-wrap: wrap; /* Allows wrapping if there are too many buttons */
+    margin: 20px 0;
+    padding: 10px;
+    /* background-color: #f8f9fa;
+    border-radius: 5px;
+    border: 1px solid #ddd; */
+}
+
+.pm-action-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px; /* Adjust margin for spacing */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    flex: 1; /* Allows buttons to expand and fit the container */
+    max-width: 200px; /* Optional: Limits button width */
+}
+
+.pm-action-button:hover {
+    background-color: #0056b3;
+}
+
+/* Data container styling */
+.pm-data-container {
+    margin-top: 20px;
+}
+
+/* Search box styling */
+.pm-search-box {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* Pagination controls styling */
+.pm-pagination-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pm-pagination-controls button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pm-pagination-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pm-pagination-controls span {
+    align-self: center;
+    margin: 0 10px;
+}
