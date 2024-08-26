@@ -1,0 +1,52 @@
+/* Container for the entire Create User page */
+#createUserContainer {
+    width: 100%;
+    max-width: 600px; /* Limits the form width */
+    margin: 40px auto; /* Center the form horizontally and add margin */
+    padding: 20px; /* Add padding inside the container */
+    background-color: #ffffff; /* White background */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Title styling */
+#createUserTitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px; /* Space below the title */
+    text-align: center; /* Center the title */
+}
+
+/* Form label styling */
+.createUserLabel {
+    display: block;
+    margin-bottom: 8px; /* Space between label and input */
+    font-weight: bold;
+}
+
+/* Input and select styling */
+.createUserInput, .createUserSelect {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px;
+    margin-bottom: 15px; /* Space between fields */
+    border: 1px solid #ccc; /* Light border color */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+/* Button styling */
+.createUserButton {
+    width: 100%; /* Full width of the container */
+    padding: 10px;
+    background-color: #007bff; /* Blue background */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.createUserButton:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
