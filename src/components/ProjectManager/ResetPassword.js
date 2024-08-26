@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
@@ -12,7 +12,6 @@ const ResetPassword = () => {
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [message, setMessage] = useState('');
-    const navigate = useNavigate();
 
     const handleResetPassword = async (e) => {
         e.preventDefault();
@@ -74,44 +73,37 @@ const ResetPassword = () => {
     };
 
     return (
-        <div id="reset-container" className="reset-container">
-            <h1 id="reset-title">Reset Your Password</h1>
-            <form id="reset-password-form" onSubmit={handleResetPassword}>
-                <div className="reset-form-group">
-                    <label htmlFor="reset-old-password">Old Password</label>
-                    <input 
-                        type="password" 
-                        id="reset-old-password" 
-                        className="reset-input" 
-                        value={oldPassword} 
-                        onChange={(e) => setOldPassword(e.target.value)} 
-                        required 
+        <div>
+            <h2>Reset Password</h2>
+            <form onSubmit={handleResetPassword}>
+                <div>
+                    <label>Old Password</label>
+                    <input
+                        type="password"
+                        value={oldPassword}
+                        onChange={(e) => setOldPassword(e.target.value)}
                     />
                 </div>
-                <div className="reset-form-group">
-                    <label htmlFor="reset-new-password">New Password</label>
-                    <input 
-                        type="password" 
-                        id="reset-new-password" 
-                        className="reset-input" 
-                        value={newPassword} 
-                        onChange={(e) => setNewPassword(e.target.value)} 
-                        required 
+                <div>
+                    <label>New Password</label>
+                    <input
+                        type="password"
+                        value={newPassword}
+                        onChange={(e) => setNewPassword(e.target.value)}
                     />
                 </div>
-                <div className="reset-form-group">
-                    <label htmlFor="reset-confirm-password">Confirm Password</label>
-                    <input 
-                        type="password" 
-                        id="reset-confirm-password" 
-                        className="reset-input" 
-                        value={confirmPassword} 
-                        onChange={(e) => setConfirmPassword(e.target.value)} 
-                        required 
+                <div>
+                    <label>Confirm Password</label>
+                    <input
+                        type="password"
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
                     />
                 </div>
-                <button type="submit" id="reset-button" className="reset-button">Reset Password</button>
+                <button type="submit">Reset Password</button>
             </form>
+            {/* Display the message */}
+            {message && <p className="message">{message}</p>}
         </div>
     );
 };

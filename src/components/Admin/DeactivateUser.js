@@ -9,8 +9,8 @@ const DeactivateUser = () => {
     const [activeUsers, setActiveUsers] = useState([]);
     const [inactiveUsers, setInactiveUsers] = useState([]);
     const [selectedUser, setSelectedUser] = useState(null);
-    const [formKey, setFormKey] = useState(0); // Key for forcing re-render
-    const [isActivating, setIsActivating] = useState(true); // Toggle between activate and deactivate
+    const [formKey, setFormKey] = useState('');
+    const [isActivating, setIsActivating] = useState(false);
 
     useEffect(() => {
         const fetchUsers = async () => {
