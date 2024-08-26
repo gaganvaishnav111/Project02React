@@ -15,7 +15,6 @@ const TrackUserActivityPage = () => {
         const fetchTeamMembers = async () => {
             try {
                 const response = await fetch(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/team-members-by-manager?managerName=${username}`);
-                const response = await fetch(`http://localhost:8080/api/users/team-members-by-manager?managerName=${username}`);
                 const data = await response.json();
                 setTeamMembers(data);
             } catch (error) {

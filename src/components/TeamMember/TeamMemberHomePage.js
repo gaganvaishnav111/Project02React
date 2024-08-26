@@ -19,7 +19,6 @@ const TeamMemberHomePage = () => {
         const fetchUserDetails = async () => {
             try {
                 const response = await fetch(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/by-username?username=${username}`);
-                const response = await fetch(`http://localhost:8080/api/users/by-username?username=${username}`);
                 const data = await response.json();
                 console.log('Team Member Details:', data);
                 setUserDetails(data);
@@ -206,9 +205,6 @@ const TeamMemberHomePage = () => {
                 <button className="tm-action-button" onClick={() => fetchData(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/projects/user/${username}`, 'projects')}>My Projects</button>
                 <button className="tm-action-button" onClick={() => fetchData(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/projects/user/${username}`, 'clients')}>My Clients</button>
                 <button className="tm-action-button" onClick={() => fetchData(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/tasks/by-username/${username}`, 'tasks')}>My Tasks</button>
-                <button className="tm-action-button" onClick={() => fetchData(`http://localhost:8080/api/projects/user/${username}`, 'projects')}>My Projects</button>
-                <button className="tm-action-button" onClick={() => fetchData(`http://localhost:8080/api/projects/user/${username}`, 'clients')}>My Clients</button>
-                <button className="tm-action-button" onClick={() => fetchData(`http://localhost:8080/api/tasks/by-username/${username}`, 'tasks')}>My Tasks</button>
             </div>
             <div className="tm-data-container">
                 <h3><u>{`Displaying ${dataType}`}</u></h3>

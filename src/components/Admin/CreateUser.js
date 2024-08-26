@@ -15,9 +15,6 @@ const CreateUser = () => {
     
         try {
             const response = await axios.post('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/create', {
-
-            const response = await axios.post('http://localhost:8080/api/users/create', {
-
                 username: name,
                 email: email,
                 role: role.toUpperCase(),
