@@ -28,6 +28,7 @@ const ResetPassword = () => {
         }
 
         try {
+            const userResponse = await axios.get('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/by-username', {
             const userResponse = await axios.get('http://localhost:8080/api/users/by-username', {
                 params: { username }
             });
@@ -44,6 +45,7 @@ const ResetPassword = () => {
                 return;
             }
 
+            const resetResponse = await axios.put(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/${user.userid}/password`, null, {
             const resetResponse = await axios.put(`http://localhost:8080/api/users/${user.userid}/password`, null, {
                 params: { newPassword }
             });

@@ -29,6 +29,7 @@ const TaskDashboard = () => {
 
     const fetchUserData = async () => {
         try {
+            const userResponse = await fetch(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/by-username?username=${username}`);
             const userResponse = await fetch(`http://localhost:8080/api/users/by-username?username=${username}`);
             const userData = await userResponse.json();
             setUserId(userData.userid);
@@ -40,6 +41,7 @@ const TaskDashboard = () => {
 
     const fetchProjects = async (username) => {
         try {
+            const response = await fetch(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/projects/user/${username}`);
             const response = await fetch(`http://localhost:8080/api/projects/user/${username}`);
             const data = await response.json();
             setProjects(data);
@@ -50,6 +52,7 @@ const TaskDashboard = () => {
 
     const fetchMilestones = async () => {
         try {
+            const response = await fetch('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/milestones');
             const response = await fetch('http://localhost:8080/api/milestones');
             const data = await response.json();
             setMilestones(data);
@@ -60,6 +63,7 @@ const TaskDashboard = () => {
 
     const fetchTasksForProject = async (projectId) => {
         try {
+            const response = await fetch(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/tasks/user/${userId}/project/${projectId}`);
             const response = await fetch(`http://localhost:8080/api/tasks/user/${userId}/project/${projectId}`);
             const data = await response.json();
             console.log('Fetched tasks:', data);
@@ -71,6 +75,7 @@ const TaskDashboard = () => {
 
     const fetchProjectManager = async (projectId) => {
         try {
+            const response = await fetch(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/projects/${projectId}/manager`);
             const response = await fetch(`http://localhost:8080/api/projects/${projectId}/manager`);
             const managerData = await response.json();
             setProjectManagerName(managerData.username);
@@ -121,6 +126,7 @@ const TaskDashboard = () => {
         }
 
         try {
+            const response = await fetch(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/tasks/update-milestone?taskId=${taskId}&milestoneId=${destinationMilestone.milestoneId}`, {
             const response = await fetch(`http://localhost:8080/api/tasks/update-milestone?taskId=${taskId}&milestoneId=${destinationMilestone.milestoneId}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' }

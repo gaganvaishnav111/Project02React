@@ -22,6 +22,7 @@ const Message = () => {
 
     const fetchTeamMemberData = async () => {
         try {
+            const response = await fetch(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/by-username?username=${username}`);
             const response = await fetch(`http://localhost:8080/api/users/by-username?username=${username}`);
             const data = await response.json();
             setFormData(prevState => ({
@@ -36,6 +37,7 @@ const Message = () => {
 
     const fetchProjectManagerDetails = async () => {
         try {
+            const response = await fetch(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/projects/project-managers/team-member/${username}`);
             const response = await fetch(`http://localhost:8080/api/projects/project-managers/team-member/${username}`);
             const data = await response.json();
             setProjectManagers(data);
@@ -96,6 +98,7 @@ const Message = () => {
         };
 
         try {
+            const response = await fetch('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/messages/create', {
             const response = await fetch('http://localhost:8080/api/messages/create', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

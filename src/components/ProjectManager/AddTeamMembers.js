@@ -18,6 +18,7 @@ const AddTeamMembers = () => {
         // Fetch team members
         const fetchTeamMembers = async () => {
             try {
+                const response = await fetch('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/team-members');
                 const response = await fetch('http://localhost:8080/api/users/team-members');
                 const data = await response.json();
                 setTeamMembers(data);
@@ -29,6 +30,7 @@ const AddTeamMembers = () => {
         // Fetch projects based on username
         const fetchProjects = async () => {
             try {
+                const response = await fetch(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/projects/by-username?username=${username}`);
                 const response = await fetch(`http://localhost:8080/api/projects/by-username?username=${username}`);
                 const data = await response.json();
                 setProjects(data);
@@ -49,6 +51,7 @@ const AddTeamMembers = () => {
 
         if (selectedMember && selectedProjectObj) {
             try {
+                const response = await fetch(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/projects/${selectedProject}/add-team-member/${selectedTeamMember}`, {
                 const response = await fetch(`http://localhost:8080/api/projects/${selectedProject}/add-team-member/${selectedTeamMember}`, {
                     method: 'PUT',
                     headers: {

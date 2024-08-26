@@ -13,11 +13,15 @@ const MessageProjectManager = () => {
     useEffect(() => {
         if (username) {
             // Step 1: Fetch projects by username
+            fetch(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/projects/by-username?username=${username}`)
+
             fetch(`http://localhost:8080/api/projects/by-username?username=${username}`)
                 .then(response => response.json())
                 .then(projects => {
                     // Step 2: Fetch messages for each project
                     const projectMessagesPromises = projects.map(project => {
+                        return fetch(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/messages/getMessagesByReceiverName?receiverName=${username}&projectId=${project.projectId}`)
+
                         return fetch(`http://localhost:8080/api/messages/getMessagesByReceiverName?receiverName=${username}&projectId=${project.projectId}`)
                             .then(response => response.json())
                             .then(messages => {
@@ -54,6 +58,7 @@ const MessageProjectManager = () => {
             draggable: true,
         });
         if (confirmDelete) {
+            fetch(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/messages/delete/${messageId}`, {
             fetch(`http://localhost:8080/api/messages/delete/${messageId}`, {
                 method: 'DELETE',
             })

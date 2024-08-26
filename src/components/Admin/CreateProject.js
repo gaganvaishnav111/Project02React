@@ -16,7 +16,10 @@ const CreateProject = () => {
     useEffect(() => {
         const fetchClients = async () => {
             try {
+                const response = await axios.get('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/clients/all');
+
                 const response = await axios.get('http://localhost:8080/api/clients/all');
+
                 const clientOptions = response.data.map(client => ({
                     value: client.clientId,
                     label: `${client.clientName}`
@@ -29,7 +32,10 @@ const CreateProject = () => {
 
         const fetchProjectManagers = async () => {
             try {
+                const response = await axios.get('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/project-managers');
+
                 const response = await axios.get('http://localhost:8080/api/users/project-managers');
+
                 const managerOptions = response.data.map(manager => ({
                     value: manager.userid,
                     label: `${manager.username}`
@@ -61,7 +67,11 @@ const CreateProject = () => {
                 projectManager: { userid: projectManagerId }
             };
 
+
+            const response = await axios.post('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/projects/create', requestBody, {
+
             const response = await axios.post('http://localhost:8080/api/projects/create', requestBody, {
+
                 headers: {
                     'Content-Type': 'application/json',
                 },
