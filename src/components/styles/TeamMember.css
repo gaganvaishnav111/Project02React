@@ -1,0 +1,52 @@
+/* Container for the whole team member page */
+.tm-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+/* Navbar styling */
+.tm-navbar {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 200px; /* Adjust width as needed */
+}
+
+
+/* Style for navigation items */
+.tm-nav-item {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid #444;
+}
+
+.tm-nav-item:hover {
+    background-color: #555;
+}
+
+/* Logout button styling */
+.tm-logout-button {
+    color: #fff;
+    background-color: #d9534f; /* Red background for logout */
+    text-align: center;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: auto; /* Push to the bottom of the navbar */
+    font-weight: bold;
+}
+
+.tm-logout-button:hover {
+    background-color: #c9302c; /* Darker red on hover */
+}
+
+/* Content styling */
+.tm-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f5f5f5; /* Light background for content area */
+}
