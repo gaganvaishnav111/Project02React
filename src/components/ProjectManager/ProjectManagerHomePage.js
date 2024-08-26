@@ -20,7 +20,6 @@ const ProjectManagerHomePage = () => {
         const fetchUserDetails = async () => {
             try {
                 const response = await fetch(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/by-username?username=${username}`);
-                const response = await fetch(`http://localhost:8080/api/users/by-username?username=${username}`);
                 const data = await response.json();
                 console.log('Project Manager Details:', data);
                 setUserDetails(data);
@@ -153,9 +152,8 @@ const ProjectManagerHomePage = () => {
                                     <th>Task Name</th>
                                     <th>Assigned To</th>
                                     <th>Project Name</th>
-                                    <th>Task Details</th>
-                                    <th>Milestone</th>
-                                    <th>Due Date</th>
+                                    <th>Milestone description</th>
+                                    <th>Milestone stage</th>
                                 </>
                             )}
                             {dataType === 'clients' && (
@@ -192,7 +190,6 @@ const ProjectManagerHomePage = () => {
                                             <td>{item.project.projectName}</td>
                                             <td>{item.taskDetails}</td>
                                             <td>{item.milestone.milestoneName}</td>
-                                            <td>{new Date(item.dueDate).toLocaleDateString()}</td>
                                         </>
                                     )}
                                     {dataType === 'clients' && (
@@ -236,10 +233,6 @@ const ProjectManagerHomePage = () => {
                 <button className="pm-action-button" onClick={() => fetchData(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/projects/by-username?username=${username}`, 'projects')}>Projects Assigned</button>
                 <button className="pm-action-button" onClick={() => fetchData(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/clients-by-manager?managerName=${username}`, 'clients')}>Client Details</button>
                 <button className="pm-action-button" onClick={() => fetchData(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/tasks-by-manager?managerName=${username}`, 'tasks')}>To View All Tasks</button>
-                <button className="pm-action-button" onClick={() => fetchData('http://localhost:8080/api/users/team-members', 'team-members')}>Team Members</button>
-                <button className="pm-action-button" onClick={() => fetchData(`http://localhost:8080/api/projects/by-username?username=${username}`, 'projects')}>Projects Assigned</button>
-                <button className="pm-action-button" onClick={() => fetchData(`http://localhost:8080/api/users/clients-by-manager?managerName=${username}`, 'clients')}>Client Details</button>
-                <button className="pm-action-button" onClick={() => fetchData(`http://localhost:8080/api/users/tasks-by-manager?managerName=${username}`, 'tasks')}>To View All Tasks</button>
             </div>
             <div className="pm-data-container">
                 <h3><u>{`Displaying ${dataType}`}</u></h3>

@@ -11,11 +11,7 @@ const TrackUserActivityAdmin = () => {
     useEffect(() => {
         const fetchTeamMembers = async () => {
             try {
-
                 const response = await fetch('https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/users/team-members');
-
-                const response = await fetch('http://localhost:8080/api/users/team-members');
-
                 const data = await response.json();
                 setTeamMembers(data);
             } catch (error) {
@@ -29,11 +25,7 @@ const TrackUserActivityAdmin = () => {
     const handleTrack = async () => {
         if (selectedUser) {
             try {
-
                 const response = await fetch(`https://revtaskmanageme-b7gmhschegevhuf0.southindia-01.azurewebsites.net/api/tasks/by-username/${selectedUser}`);
-
-                const response = await fetch(`http://localhost:8080/api/tasks/by-username/${selectedUser}`);
-
                 const data = await response.json();
                 setActivities(data);
             } catch (error) {
